@@ -22,67 +22,13 @@
 </header>
 
 <main>
+<h1 class="visually-hidden">Dashboard</h1>
 <div class="toolbar">
-  <div class="tabs" role="tablist" aria-label="Tools">
-    <button class="tab" role="tab" id="tab-tradingview" aria-controls="panel-tradingview" data-tool="tradingview">TradingView<kbd>1</kbd></button>
-    <button class="tab" role="tab" id="tab-dexscreener" aria-controls="panel-dexscreener" data-tool="dexscreener">DexScreener<kbd>2</kbd></button>
-    <button class="tab" role="tab" id="tab-coinmarketcap" aria-controls="panel-coinmarketcap" data-tool="coinmarketcap">CoinMarketCap<kbd>3</kbd></button>
-    <button class="tab" role="tab" id="tab-checkonchain" aria-controls="panel-checkonchain" data-tool="checkonchain">Checkonchain<kbd>4</kbd></button>
-  </div>
-  <span class="hint">Press 1 to 4 to switch tool, / to search</span>
+  <span class="hint" id="hint"></span>
+  <button class="btn" type="button" id="split-toggle" aria-pressed="false"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1.75" y="2.75" width="14.5" height="12.5" rx="2.5"/><path d="M9 2.75v12.5"/></svg><span>Split view</span></button>
 </div>
-
-<!-- TradingView -->
-<section class="panel" role="tabpanel" id="panel-tradingview" aria-labelledby="tab-tradingview" hidden>
-  <div class="panel-head">
-    <div><h1>TradingView</h1><p>Full charting. Type a symbol to change the chart.</p></div>
-    <form class="search" id="tv-form">
-      <label for="tv-symbol">Symbol</label>
-      <input id="tv-symbol" data-search autocomplete="off" spellcheck="false" placeholder="e.g. BINANCE:ETHUSDT">
-      <button class="btn btn-primary" type="submit">Show</button>
-    </form>
-  </div>
-  <div class="frame" id="tv-frame"></div>
-</section>
-
-<!-- DexScreener -->
-<section class="panel" role="tabpanel" id="panel-dexscreener" aria-labelledby="tab-dexscreener" hidden>
-  <div class="panel-head">
-    <div><h1>DexScreener</h1><p>Search a token, then pick a pair to see its live chart.</p></div>
-    <form class="search" id="dex-form">
-      <label for="dex-query">Token</label>
-      <input id="dex-query" data-search autocomplete="off" spellcheck="false" placeholder="name, symbol or address">
-      <button class="btn btn-primary" type="submit">Search</button>
-    </form>
-  </div>
-  <p class="status" id="dex-status" role="status"></p>
-  <div class="results" id="dex-results"></div>
-  <div class="frame" id="dex-frame"></div>
-</section>
-
-<!-- CoinMarketCap -->
-<section class="panel" role="tabpanel" id="panel-coinmarketcap" aria-labelledby="tab-coinmarketcap" hidden>
-  <div class="panel-head">
-    <div><h1>CoinMarketCap</h1><p>Prices and rankings across coins.</p></div>
-  </div>
-  <div class="cmc-strip" id="cmc-strip"></div>
-  <div class="fallback">
-    <p>CoinMarketCap only lets other sites show its small price strip, not its full pages. Open the full site for rankings and coin pages.</p>
-    <a class="btn btn-primary" href="https://coinmarketcap.com/" target="_blank" rel="noopener noreferrer">Open CoinMarketCap</a>
-  </div>
-</section>
-
-<!-- Checkonchain -->
-<section class="panel" role="tabpanel" id="panel-checkonchain" aria-labelledby="tab-checkonchain" hidden>
-  <div class="panel-head">
-    <div><h1>Checkonchain</h1><p>On-chain Bitcoin charts and cycle data.</p></div>
-  </div>
-  <div class="fallback">
-    <p>If the charts below stay blank, Checkonchain is not allowing itself to be shown inside other sites. Use the button to open it instead.</p>
-    <a class="btn btn-primary" href="https://charts.checkonchain.com/" target="_blank" rel="noopener noreferrer">Open Checkonchain</a>
-  </div>
-  <div class="frame" id="coc-frame"></div>
-</section>
+<div class="panes" id="panes"></div>
+<noscript><p>The dashboard needs JavaScript turned on to show the charts.</p></noscript>
 </main>
 
 <footer class="footer" style="margin-top:32px">
