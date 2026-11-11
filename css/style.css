@@ -260,3 +260,8 @@ a:hover { color: #8cf0f6; }
   .is-split .pane > .tabs .tab { flex: 0 0 auto; padding: 0 12px; font-size: 14px; }
   .is-split .pane > .tabs .tab::after { left: 12px; right: 12px; }
 }
+/* In split view the search box and its button stay on one line. */
+@media (min-width: 641px) {
+  .is-split .search { flex-wrap: nowrap; width: 100%; }
+  .is-split .search input { flex: 1 1 auto; width: auto; min-width: 0; }
+}
