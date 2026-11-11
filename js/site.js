@@ -10,8 +10,8 @@
     } else {
       // No link yet: show it as "coming soon" instead of a dead button.
       var off = document.createElement("span");
-      off.className = el.className + " social-off";
-      off.textContent = el.textContent + " · link soon";
+      off.className = "social-off";
+      off.textContent = el.textContent + " (link soon)";
       el.replaceWith(off);
     }
   });

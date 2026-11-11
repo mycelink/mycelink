@@ -3,118 +3,81 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mycelink — every chart in one place</title>
+<title>Mycelink, every chart in one place</title>
 <meta name="description" content="Mycelink is the free community hub that brings DexScreener, CoinMarketCap, TradingView and Checkonchain together in one place.">
-<meta name="theme-color" content="#050e15">
+<meta name="theme-color" content="#05121b">
 <link rel="icon" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="wrap">
 
 <header class="topbar">
-  <a class="brand" href="./"><img src="assets/icon-180.png" alt="" width="48" height="48"><span>MYCELINK</span></a>
+  <a class="brand" href="./"><img src="assets/icon-180.png" alt="" width="36" height="36"><span>Mycelink</span></a>
   <nav class="nav" aria-label="Main">
     <a href="#tools">Charts</a>
     <a href="#community">Community</a>
     <a href="#social">Socials</a>
   </nav>
-  <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
-    <span class="pill-soon">Member logins: coming next</span>
-    <a class="btn btn-gold" href="app.html">Open dashboard</a>
+  <div class="bar-end">
+    <a class="btn" href="app.html">Open dashboard</a>
   </div>
 </header>
 
 <main>
 <section class="hero">
-  <p class="eyebrow">MYCELINK.ECO / FREE FOR THE COMMUNITY</p>
-
-  <div class="emblem">
-    <svg viewBox="0 0 400 300" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
-      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M400 80 H310 L270 40 H130" stroke="#E3B55A" stroke-width="2"/>
-        <path d="M400 120 H250 L220 150 H60" stroke="#14787A" stroke-width="4"/>
-        <path d="M400 160 H330 L300 190 H180" stroke="#E3B55A" stroke-width="2"/>
-        <path d="M400 220 H290 L250 260 H110" stroke="#14787A" stroke-width="4"/>
-        <path d="M400 200 H360M400 100 H350" stroke="#1F5560" stroke-width="2"/>
-      </g>
-      <circle cx="130" cy="40" r="8" fill="#050E15" stroke="#E3B55A" stroke-width="2"/><circle cx="130" cy="40" r="3" fill="#3FD8F2"/>
-      <circle cx="60" cy="150" r="10" fill="#050E15" stroke="#E3B55A" stroke-width="2"/><circle cx="60" cy="150" r="4.5" fill="#3FD8F2"/>
-      <circle cx="180" cy="190" r="8" fill="#050E15" stroke="#E3B55A" stroke-width="2"/><circle cx="180" cy="190" r="3" fill="#3FD8F2"/>
-      <circle cx="110" cy="260" r="10" fill="#050E15" stroke="#E3B55A" stroke-width="2"/><circle cx="110" cy="260" r="4.5" fill="#3FD8F2"/>
-    </svg>
-    <img src="assets/logo.png" alt="Mycelink logo: a mushroom made of circuit lines" width="320" height="320">
-    <svg class="flip" viewBox="0 0 400 300" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
-      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M400 80 H290 L250 40 H110" stroke="#14787A" stroke-width="4"/>
-        <path d="M400 120 H330 L300 150 H180" stroke="#E3B55A" stroke-width="2"/>
-        <path d="M400 180 H250 L220 210 H60" stroke="#14787A" stroke-width="4"/>
-        <path d="M400 220 H310 L270 260 H130" stroke="#E3B55A" stroke-width="2"/>
-        <path d="M400 150 H360M400 200 H345" stroke="#1F5560" stroke-width="2"/>
-      </g>
-      <circle cx="110" cy="40" r="10" fill="#050E15" stroke="#E3B55A" stroke-width="2"/><circle cx="110" cy="40" r="4.5" fill="#3FD8F2"/>
-      <circle cx="180" cy="150" r="8" fill="#050E15" stroke="#E3B55A" stroke-width="2"/><circle cx="180" cy="150" r="3" fill="#3FD8F2"/>
-      <circle cx="60" cy="210" r="10" fill="#050E15" stroke="#E3B55A" stroke-width="2"/><circle cx="60" cy="210" r="4.5" fill="#3FD8F2"/>
-      <circle cx="130" cy="260" r="8" fill="#050E15" stroke="#E3B55A" stroke-width="2"/><circle cx="130" cy="260" r="3" fill="#3FD8F2"/>
-    </svg>
-  </div>
-
-  <h1>The network beneath<br>the <em>market</em>.</h1>
+  <img class="hero-mark" src="assets/logo.png" alt="Mycelink logo: a mushroom made of circuit lines" width="104" height="104">
+  <h1>The network beneath the market.</h1>
   <p class="lead">Four trusted crypto tools, wired into one free home for the Mycelink community.</p>
   <div class="actions">
-    <a class="btn btn-gold btn-lg" href="app.html">Open the dashboard</a>
-    <a class="btn btn-lg" href="#community">How it works</a>
+    <a class="btn btn-primary btn-lg" href="app.html">Open the dashboard</a>
+    <a class="text-link" href="#community">How it works</a>
   </div>
 </section>
 
-<div class="roots" aria-hidden="true">
-  <svg viewBox="0 0 1200 110" preserveAspectRatio="none">
-    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M570 0 V20 L540 50 H200 L150 100 V110" stroke="#14787A" stroke-width="4" vector-effect="non-scaling-stroke"/>
-      <path d="M590 0 V50 L560 80 H470 L450 100 V110" stroke="#E3B55A" stroke-width="2" vector-effect="non-scaling-stroke"/>
-      <path d="M610 0 V50 L640 80 H730 L750 100 V110" stroke="#E3B55A" stroke-width="2" vector-effect="non-scaling-stroke"/>
-      <path d="M630 0 V20 L660 50 H1000 L1050 100 V110" stroke="#14787A" stroke-width="4" vector-effect="non-scaling-stroke"/>
-    </g>
-  </svg>
-</div>
-
-<section id="tools" class="nodes" aria-label="The four tools">
-  <a class="node" href="app.html#dexscreener">
-    <span class="tag">NODE 01 / DEX</span>
-    <h2>DexScreener</h2>
-    <p>Live prices and charts for tokens on decentralised exchanges.</p>
-  </a>
-  <a class="node" href="app.html#coinmarketcap">
-    <span class="tag">NODE 02 / MARKETS</span>
-    <h2>CoinMarketCap</h2>
-    <p>Rankings, prices and market caps across coins.</p>
-  </a>
-  <a class="node" href="app.html#tradingview">
-    <span class="tag">NODE 03 / CHARTS</span>
-    <h2>TradingView</h2>
-    <p>Advanced charting and technical analysis tools.</p>
-  </a>
-  <a class="node" href="app.html#checkonchain">
-    <span class="tag">NODE 04 / ON-CHAIN</span>
-    <h2>Checkonchain</h2>
-    <p>On-chain Bitcoin charts and cycle data.</p>
-  </a>
+<section id="tools" aria-labelledby="tools-title">
+  <h2 class="section-title" id="tools-title">Four tools, one place</h2>
+  <ul class="thread">
+    <li><a class="tool" href="app.html#dexscreener">
+      <span class="tool-name">DexScreener</span>
+      <span class="tool-desc">Live prices and charts for tokens on decentralised exchanges.</span>
+      <span class="tool-open">Open</span>
+    </a></li>
+    <li><a class="tool" href="app.html#coinmarketcap">
+      <span class="tool-name">CoinMarketCap</span>
+      <span class="tool-desc">Rankings, prices and market caps across coins.</span>
+      <span class="tool-open">Open</span>
+    </a></li>
+    <li><a class="tool" href="app.html#tradingview">
+      <span class="tool-name">TradingView</span>
+      <span class="tool-desc">Advanced charting and technical analysis tools.</span>
+      <span class="tool-open">Open</span>
+    </a></li>
+    <li><a class="tool" href="app.html#checkonchain">
+      <span class="tool-name">Checkonchain</span>
+      <span class="tool-desc">On-chain Bitcoin charts and cycle data.</span>
+      <span class="tool-open">Open</span>
+    </a></li>
+  </ul>
 </section>
 
-<section id="community" class="pair">
-  <div class="card">
-    <div class="tag">MEMBERS · COMING NEXT</div>
-    <h2>Your own private profile</h2>
-    <p>Each member will sign in and see only their own saved charts and settings.</p>
-  </div>
-  <div class="card gold">
-    <div class="tag">ADMIN · COMING NEXT</div>
-    <h2>A view of the whole community</h2>
-    <p>The Mycelink admin will see what members save and use. Every member is told this clearly before they sign up.</p>
+<section id="community" aria-labelledby="community-title">
+  <h2 class="section-title" id="community-title">How it works</h2>
+  <div class="split">
+    <div>
+      <span class="soon">Members, coming next</span>
+      <h3>Your own private profile</h3>
+      <p>Each member will sign in and see only their own saved charts and settings.</p>
+    </div>
+    <div>
+      <span class="soon">Admin, coming next</span>
+      <h3>A view of the whole community</h3>
+      <p>The Mycelink admin will see what members save and use. Every member is told this clearly before they sign up.</p>
+    </div>
   </div>
 </section>
 </main>
@@ -123,9 +86,9 @@
   <div class="row">
     <h2>Follow Mycelink</h2>
     <div class="socials">
-      <a class="btn" data-social="instagram" href="#">Instagram</a>
-      <a class="btn" data-social="youtube" href="#">YouTube</a>
-      <a class="btn" data-social="tiktok" href="#">TikTok</a>
+      <a data-social="instagram" href="#">Instagram</a>
+      <a data-social="youtube" href="#">YouTube</a>
+      <a data-social="tiktok" href="#">TikTok</a>
     </div>
   </div>
   <p class="small">Charts and data belong to the tools named above. Mycelink is free and is not financial advice.</p>

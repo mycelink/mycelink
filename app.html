@@ -3,22 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dashboard — Mycelink</title>
+<title>Dashboard, Mycelink</title>
 <meta name="description" content="The Mycelink dashboard: TradingView, DexScreener, CoinMarketCap and Checkonchain in one place.">
-<meta name="theme-color" content="#050e15">
+<meta name="theme-color" content="#05121b">
 <link rel="icon" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="wrap dash">
 
 <header class="topbar">
-  <a class="brand" href="./"><img src="assets/icon-180.png" alt="" width="48" height="48"><span>MYCELINK</span></a>
-  <span class="pill-soon">Member logins: coming next</span>
+  <a class="brand" href="./"><img src="assets/icon-180.png" alt="" width="36" height="36"><span>Mycelink</span></a>
+  <span class="pill-soon">Member logins are coming next</span>
 </header>
 
 <main>
@@ -29,7 +29,7 @@
     <button class="tab" role="tab" id="tab-coinmarketcap" aria-controls="panel-coinmarketcap" data-tool="coinmarketcap">CoinMarketCap<kbd>3</kbd></button>
     <button class="tab" role="tab" id="tab-checkonchain" aria-controls="panel-checkonchain" data-tool="checkonchain">Checkonchain<kbd>4</kbd></button>
   </div>
-  <span class="hint">Keys: 1–4 switch tool · / search</span>
+  <span class="hint">Press 1 to 4 to switch tool, / to search</span>
 </div>
 
 <!-- TradingView -->
@@ -39,7 +39,7 @@
     <form class="search" id="tv-form">
       <label for="tv-symbol">Symbol</label>
       <input id="tv-symbol" data-search autocomplete="off" spellcheck="false" placeholder="e.g. BINANCE:ETHUSDT">
-      <button class="btn" type="submit">Show</button>
+      <button class="btn btn-primary" type="submit">Show</button>
     </form>
   </div>
   <div class="frame" id="tv-frame"></div>
@@ -52,7 +52,7 @@
     <form class="search" id="dex-form">
       <label for="dex-query">Token</label>
       <input id="dex-query" data-search autocomplete="off" spellcheck="false" placeholder="name, symbol or address">
-      <button class="btn" type="submit">Search</button>
+      <button class="btn btn-primary" type="submit">Search</button>
     </form>
   </div>
   <p class="status" id="dex-status" role="status"></p>
@@ -68,7 +68,7 @@
   <div class="cmc-strip" id="cmc-strip"></div>
   <div class="fallback">
     <p>CoinMarketCap only lets other sites show its small price strip, not its full pages. Open the full site for rankings and coin pages.</p>
-    <a class="btn btn-gold" href="https://coinmarketcap.com/" target="_blank" rel="noopener noreferrer">Open CoinMarketCap</a>
+    <a class="btn btn-primary" href="https://coinmarketcap.com/" target="_blank" rel="noopener noreferrer">Open CoinMarketCap</a>
   </div>
 </section>
 
@@ -79,7 +79,7 @@
   </div>
   <div class="fallback">
     <p>If the charts below stay blank, Checkonchain is not allowing itself to be shown inside other sites. Use the button to open it instead.</p>
-    <a class="btn btn-gold" href="https://charts.checkonchain.com/" target="_blank" rel="noopener noreferrer">Open Checkonchain</a>
+    <a class="btn btn-primary" href="https://charts.checkonchain.com/" target="_blank" rel="noopener noreferrer">Open Checkonchain</a>
   </div>
   <div class="frame" id="coc-frame"></div>
 </section>
@@ -89,9 +89,9 @@
   <div class="row">
     <h2>Follow Mycelink</h2>
     <div class="socials">
-      <a class="btn" data-social="instagram" href="#">Instagram</a>
-      <a class="btn" data-social="youtube" href="#">YouTube</a>
-      <a class="btn" data-social="tiktok" href="#">TikTok</a>
+      <a data-social="instagram" href="#">Instagram</a>
+      <a data-social="youtube" href="#">YouTube</a>
+      <a data-social="tiktok" href="#">TikTok</a>
     </div>
   </div>
   <p class="small">Charts and data belong to the tools named above. Mycelink is free and is not financial advice.</p>

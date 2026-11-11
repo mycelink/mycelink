@@ -52,7 +52,7 @@
       theme: "dark",
       style: "1",
       locale: "en",
-      backgroundColor: "#050e15",
+      backgroundColor: "#081d29",
       gridColor: "rgba(18, 48, 58, 0.6)",
       allow_symbol_change: true,
       hide_side_toolbar: false,
