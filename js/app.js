@@ -197,10 +197,16 @@
         coins: String(cfg.cmcCoins || "1,1027").replace(/[^0-9,]/g, ""),
         currency: "USD", theme: "dark", transparent: "true", "show-symbol-logo": "true"
       });
-      kids.push(el("div", { class: "cmc-strip" }, [
-        widget,
-        el("script", { src: "https://files.coinmarketcap.com/static/widget/coinMarquee.js", async: "" })
-      ]));
+      var script = el("script", { src: "https://files.coinmarketcap.com/static/widget/coinMarquee.js", async: "" });
+      var strip = el("div", { class: "cmc-strip" }, [widget, script]);
+      // Their script only starts itself while a page is still loading, so start it by hand.
+      script.addEventListener("load", function () {
+        try { if (typeof window.__WIDGET_INIT === "function") window.__WIDGET_INIT(); } catch (e) {}
+      });
+      // If nothing has appeared after a few seconds, take the empty box away.
+      script.addEventListener("error", function () { strip.remove(); });
+      setTimeout(function () { if (!widget.firstChild && !widget.shadowRoot) strip.remove(); }, 8000);
+      kids.push(strip);
     }
     kids.push(fallback(
       "CoinMarketCap only lets other sites show its small price strip, not its full pages. Open the full site for rankings and coin pages.",
@@ -211,10 +217,8 @@
   // ---------- Checkonchain ----------
   function buildCheckonchain() {
     return [
-      head("Checkonchain", "On-chain Bitcoin charts and cycle data."),
-      fallback(
-        "If the charts below stay blank, Checkonchain is not allowing itself to be shown inside other sites. Use the button to open it instead.",
-        "Open Checkonchain", "https://charts.checkonchain.com/"),
+      head("Checkonchain", "On-chain Bitcoin charts and cycle data.",
+        el("a", { class: "text-link", href: "https://charts.checkonchain.com/", target: "_blank", rel: "noopener noreferrer", text: "Open in a new tab" })),
       el("div", { class: "frame" }, [
         el("iframe", { src: "https://charts.checkonchain.com/", title: "Checkonchain charts", loading: "lazy", referrerpolicy: "no-referrer" })
       ])
