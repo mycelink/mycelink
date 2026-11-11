@@ -24,6 +24,7 @@
     <a href="#social">Socials</a>
   </nav>
   <div class="bar-end">
+    <a class="text-link" data-account href="account.html" hidden>Sign in</a>
     <a class="btn" href="app.html">Open dashboard</a>
   </div>
 </header>
@@ -69,9 +70,9 @@
   <h2 class="section-title" id="community-title">How it works</h2>
   <div class="split split-one">
     <div>
-      <span class="soon">Members, coming next</span>
       <h3>Your own private profile</h3>
-      <p>Each member will sign in and see only their own saved charts and settings.</p>
+      <p>Create a free account and sign in. You see only your own profile, and other members cannot see yours.</p>
+      <p style="margin-top:20px"><a class="btn" href="account.html">Create a free account</a></p>
     </div>
   </div>
 </section>
@@ -93,5 +94,7 @@
 </div>
 <script src="js/config.js"></script>
 <script src="js/site.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/auth.js"></script>
 </body>
 </html>

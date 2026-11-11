@@ -19,6 +19,9 @@
   function remember(key, value) { try { localStorage.setItem("mycelink." + key, value); } catch (e) {} }
   function recall(key) { try { return localStorage.getItem("mycelink." + key); } catch (e) { return null; } }
 
+  // For signed-in members, note which tool was opened (see js/auth.js). Does nothing otherwise.
+  function log(tool, detail) { if (window.MycelinkAuth) window.MycelinkAuth.log(tool, detail); }
+
   function el(tag, attrs, kids) {
     var n = document.createElement(tag);
     Object.keys(attrs || {}).forEach(function (k) {
@@ -97,6 +100,7 @@
       if (!next) return;
       s.input.value = next;
       remember(key, next);
+      log("tradingview", next);
       loadTradingView(frame, next);
     });
     loadTradingView(frame, symbol);
@@ -177,6 +181,7 @@
       var q = s.input.value.trim().slice(0, 80);
       if (!q) return;
       remember(key, q);
+      log("dexscreener", q);
       frame.textContent = "";
       search(q);
     });
@@ -277,6 +282,7 @@
     }
     if (focusTab) pane.tabs[tool].focus();
     remember("tab" + pane.suffix, tool);
+    log(tool);
     if (pane.key === "a" && location.hash.slice(1) !== tool) history.replaceState(null, "", "#" + tool);
   }
 
@@ -322,6 +328,13 @@
       var box = p.sections[p.tool].querySelector("[data-search]");
       if (box) { box.focus(); box.select(); e.preventDefault(); }
     }
+  });
+
+  // The sign-in check finishes a moment after the page opens, so note the open tools then.
+  document.addEventListener("mycelink:auth", function (e) {
+    if (!e.detail.session) return;
+    log(panes.a.tool);
+    if (split && panes.b) log(panes.b.tool);
   });
 
   window.addEventListener("hashchange", function () { show(panes.a, location.hash.slice(1)); });

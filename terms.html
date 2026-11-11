@@ -18,7 +18,7 @@
 
 <header class="topbar">
   <a class="brand" href="./"><img src="assets/icon-180.png" alt="" width="36" height="36"><span>Mycelink</span></a>
-  <div class="bar-end"><a class="btn" href="app.html">Open dashboard</a></div>
+  <div class="bar-end"><a class="text-link" data-account href="account.html" hidden>Sign in</a><a class="btn" href="app.html">Open dashboard</a></div>
 </header>
 
 <main class="prose">
@@ -37,7 +37,7 @@
   <p>The charts, prices and data belong to the tools that provide them. Mycelink does not make or check that data, so we cannot promise it is correct, complete or always available. Each tool also has its own terms, which apply when you use it.</p>
 
   <h2>Member accounts</h2>
-  <p>Member accounts are coming. When they open:</p>
+  <p>When you create an account:</p>
   <ul>
     <li>Accounts are free.</li>
     <li>Keep your password to yourself. You are responsible for what happens in your account.</li>
@@ -57,5 +57,8 @@
 </footer>
 
 </div>
+<script src="js/config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/auth.js"></script>
 </body>
 </html>

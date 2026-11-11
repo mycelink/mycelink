@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your account, Mycelink</title>
+<meta name="description" content="Sign in to Mycelink or create a free account.">
+<meta name="theme-color" content="#05121b">
+<link rel="icon" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header class="topbar">
+  <a class="brand" href="./"><img src="assets/icon-180.png" alt="" width="36" height="36"><span>Mycelink</span></a>
+  <div class="bar-end"><a class="btn" href="app.html">Open dashboard</a></div>
+</header>
+
+<main class="account">
+  <h1>Your account</h1>
+  <p id="acct-status" class="notice" role="status">Loading…</p>
+
+  <section id="view-auth" hidden>
+    <div class="switch">
+      <button type="button" id="mode-signin" aria-pressed="true">Sign in</button>
+      <button type="button" id="mode-signup" aria-pressed="false">Create account</button>
+    </div>
+
+    <form id="form-signin" class="form">
+      <div class="field"><label for="in-email">Email</label><input id="in-email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="in-password">Password</label><input id="in-password" type="password" autocomplete="current-password" required></div>
+      <div class="form-actions">
+        <button class="btn btn-primary btn-lg" type="submit">Sign in</button>
+        <button class="link-button" type="button" id="forgot">Forgot password</button>
+      </div>
+    </form>
+
+    <form id="form-signup" class="form" hidden>
+      <div class="field"><label for="up-name">Name <span class="optional">(what we call you)</span></label><input id="up-name" type="text" autocomplete="nickname" maxlength="60" required></div>
+      <div class="field"><label for="up-email">Email</label><input id="up-email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="up-password">Password <span class="optional">(at least 8 characters)</span></label><input id="up-password" type="password" autocomplete="new-password" minlength="8" required></div>
+      <label class="check"><input id="up-agree" type="checkbox" required><span>I have read the <a href="terms.html" target="_blank" rel="noopener">Terms</a> and <a href="privacy.html" target="_blank" rel="noopener">Privacy</a> pages. I understand the Mycelink admin can see what I save and which tools I use.</span></label>
+      <div class="form-actions"><button class="btn btn-primary btn-lg" type="submit">Create account</button></div>
+    </form>
+  </section>
+
+  <section id="view-reset" hidden>
+    <form id="form-reset" class="form">
+      <div class="field"><label for="new-password">New password <span class="optional">(at least 8 characters)</span></label><input id="new-password" type="password" autocomplete="new-password" minlength="8" required></div>
+      <div class="form-actions"><button class="btn btn-primary btn-lg" type="submit">Save new password</button></div>
+    </form>
+  </section>
+
+  <section id="view-member" hidden>
+    <dl class="facts">
+      <div><dt>Name</dt><dd id="me-name"></dd></div>
+      <div><dt>Email</dt><dd id="me-email"></dd></div>
+      <div><dt>Member since</dt><dd id="me-since"></dd></div>
+    </dl>
+    <div class="form-actions">
+      <a class="btn btn-primary btn-lg" href="app.html">Open the dashboard</a>
+      <button class="btn btn-lg" type="button" id="sign-out">Sign out</button>
+    </div>
+  </section>
+
+  <section id="view-offline" hidden>
+    <p>Member accounts are not switched on yet. You can still use the <a href="app.html">dashboard</a> without one.</p>
+  </section>
+</main>
+
+<footer class="footer">
+  <p class="legal"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></p>
+</footer>
+
+</div>
+<script src="js/config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/auth.js"></script>
+<script src="js/account.js"></script>
+</body>
+</html>

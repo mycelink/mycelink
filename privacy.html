@@ -18,7 +18,7 @@
 
 <header class="topbar">
   <a class="brand" href="./"><img src="assets/icon-180.png" alt="" width="36" height="36"><span>Mycelink</span></a>
-  <div class="bar-end"><a class="btn" href="app.html">Open dashboard</a></div>
+  <div class="bar-end"><a class="text-link" data-account href="account.html" hidden>Sign in</a><a class="btn" href="app.html">Open dashboard</a></div>
 </header>
 
 <main class="prose">
@@ -27,23 +27,25 @@
 
   <p>This page explains, in plain words, what Mycelink knows about you and who can see it.</p>
 
-  <h2>Right now</h2>
-  <p>Mycelink has no member accounts yet. We do not ask for your name, email or any other personal details, and we do not keep a record of what you look at.</p>
+  <h2>If you use Mycelink without an account</h2>
+  <p>We do not ask for your name, email or any other personal details, and we do not keep a record of what you look at.</p>
   <p>Your browser remembers the last tool you opened and your last search, so the dashboard opens where you left it. That is stored only on your own device. Clearing your browser data removes it.</p>
 
-  <h2>The tools shown inside Mycelink</h2>
-  <p>The charts come from TradingView, DexScreener, CoinMarketCap and Checkonchain. When you open one, your browser connects to that company directly, and it may set its own cookies or collect data under its own privacy policy. Mycelink does not control that. Our fonts are loaded from Google Fonts in the same way.</p>
-
-  <h2>When member accounts open</h2>
-  <p>Mycelink will add free member accounts. When it does:</p>
+  <h2>If you create an account</h2>
+  <p>Accounts are free. When you have one:</p>
   <ul>
-    <li>You will sign in with an email address and a password. Passwords are scrambled, so nobody at Mycelink can read them.</li>
+    <li>We keep the name and email address you give us, and the date you joined and last visited.</li>
+    <li>Your password is scrambled before it is stored, so nobody at Mycelink can read it.</li>
     <li>Other members cannot see your profile. You see only your own.</li>
-    <li>The Mycelink admin can see each member's account, which tools they use, and what they save, such as watchlists and saved charts.</li>
+    <li>While you are signed in, we record which tools you open and what you search for in them.</li>
+    <li>The Mycelink admin can see each member's account, that record of tools and searches, and anything the member saves, such as trading journal entries.</li>
     <li>The admin uses this to understand what the community finds useful and to keep the site safe. It is not sold or shared for advertising.</li>
     <li>You can ask to see your data, correct it, or have your account and its data deleted.</li>
   </ul>
-  <p>This page will be updated with full details, including how to contact us, before the first account can be created.</p>
+  <p>Accounts and saved data are stored with Supabase, a hosting company,.</p>
+
+  <h2>The tools shown inside Mycelink</h2>
+  <p>The charts come from TradingView, DexScreener, CoinMarketCap and Checkonchain. When you open one, your browser connects to that company directly, and it may set its own cookies or collect data under its own privacy policy. Mycelink does not control that. Our fonts are loaded from Google Fonts in the same way.</p>
 
   <h2>Changes</h2>
   <p>If this page changes, the date at the top changes with it.</p>
@@ -54,5 +56,8 @@
 </footer>
 
 </div>
+<script src="js/config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/auth.js"></script>
 </body>
 </html>
