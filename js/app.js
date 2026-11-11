@@ -111,6 +111,14 @@
     return "$" + n.toPrecision(3);
   }
 
+  function vol(p) { return Number(p.volume && p.volume.h24) || 0; }
+
+  function compact(n) {
+    n = Number(n);
+    if (!isFinite(n) || n <= 0) return "none";
+    return "$" + n.toLocaleString("en-GB", { notation: "compact", maximumFractionDigits: 1 });
+  }
+
   function buildDexScreener(pane) {
     var key = "dex" + pane.suffix;
     var s = searchForm("dex-query-" + pane.key, "Token", "name, symbol or address", "Search");
@@ -138,10 +146,12 @@
         .then(function (data) {
           var pairs = (data && Array.isArray(data.pairs) ? data.pairs : [])
             .filter(function (p) { return p && p.url && p.baseToken && p.quoteToken; })
-            .sort(function (a, b) { return ((b.liquidity && b.liquidity.usd) || 0) - ((a.liquidity && a.liquidity.usd) || 0); })
-            .slice(0, 8);
+            .sort(function (a, b) { return vol(b) - vol(a); });
+          // Hide pools nobody is trading, unless that would leave nothing to show.
+          var active = pairs.filter(function (p) { return vol(p) >= 1000; });
+          pairs = (active.length ? active : pairs).slice(0, 8);
           if (!pairs.length) { status.textContent = "No pairs found for “" + query + "”. Try another name or paste a token address."; return; }
-          status.textContent = "Top " + pairs.length + " pairs by liquidity. Pick one:";
+          status.textContent = "Busiest " + pairs.length + " pairs by trading in the last 24 hours. Pick one:";
           pairs.forEach(function (p, i) {
             var change = p.priceChange ? Number(p.priceChange.h24) : NaN;
             var price = el("small", { text: money(p.priceUsd) + (isFinite(change) ? "  " + (change >= 0 ? "▲ +" : "▼ ") + change.toFixed(2) + "% 24h" : "") });
@@ -149,7 +159,8 @@
             var b = el("button", { type: "button", class: "result", "aria-pressed": "false" }, [
               el("b", { text: p.baseToken.symbol + " / " + p.quoteToken.symbol }),
               el("small", { text: (p.chainId || "?") + " · " + (p.dexId || "?") }),
-              price
+              price,
+              el("small", { text: "24h volume " + compact(vol(p)) + " · liquidity " + compact(p.liquidity && p.liquidity.usd) })
             ]);
             b.addEventListener("click", function () { showPair(p, b); });
             list.appendChild(b);
